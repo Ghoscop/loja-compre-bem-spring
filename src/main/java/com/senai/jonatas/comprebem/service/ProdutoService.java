@@ -48,9 +48,14 @@ public class ProdutoService {
 
     public ProdutoResponseDTO save(ProdutoRequestDTO request) {
         Produto produto = Produto.toEntity(request);
-        return ProdutoResponseDTO.toDto(
-                produtoRepository.save(produto)
-        );
+
+        if (produto.getQuantidade() == null) {
+            produto.setQuantidade(0);
+        }
+
+        Produto salvo = produtoRepository.save(produto);
+
+        return ProdutoResponseDTO.toDto(salvo);
     }
 
     public ProdutoResponseDTO update(

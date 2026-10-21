@@ -22,8 +22,8 @@ public class Data implements CommandLineRunner {
         }
 
         String[] nomes = {
-                "Cadeira", "Mesa", "Sofa", "Armario",
-                "Estante", "Escrivaninha"
+                "Cadeira", "Mesa", "Sofa",
+                "Armario", "Estante", "Escrivaninha"
         };
 
         for (int i = 1; i <= 60; i++) {
@@ -32,12 +32,8 @@ public class Data implements CommandLineRunner {
             String nome = nomes[(i - 1) % nomes.length];
 
             produto.setNome(nome + " " + i);
-            produto.setDescricao(
-                    "Descricao do produto " + i
-            );
-            produto.setPreco(
-                    BigDecimal.valueOf(i * 10L)
-            );
+            produto.setDescricao("Descricao do produto " + i);
+            produto.setPreco(BigDecimal.valueOf(i * 10L));
             produto.setCategoria("Moveis");
             produto.setImagem("");
             produto.setQuantidade(10);

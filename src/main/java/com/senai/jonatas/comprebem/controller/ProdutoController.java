@@ -7,8 +7,6 @@ import com.senai.jonatas.comprebem.service.ProdutoService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.server.ResponseStatusException;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,17 +26,13 @@ public class ProdutoController {
             @RequestParam(defaultValue = "20") int size) {
 
         if (page < 0) {
-            throw new ResponseStatusException(
-                    HttpStatus.BAD_REQUEST,
-                    "A página não pode ser negativa"
-            );
+            throw new IllegalArgumentException(
+                    "A página não pode ser negativa");
         }
 
         if (size < 1) {
-            throw new ResponseStatusException(
-                    HttpStatus.BAD_REQUEST,
-                    "O tamanho deve ser pelo menos 1"
-            );
+            throw new IllegalArgumentException(
+                    "O tamanho deve ser pelo menos 1");
         }
 
         size = Math.min(size, 50);

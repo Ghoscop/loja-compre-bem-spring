@@ -1,3 +1,4 @@
+
 package com.senai.jonatas.comprebem.dto;
 
 import com.senai.jonatas.comprebem.entity.Produto;
@@ -13,7 +14,7 @@ public record ProdutoResponseDTO(
         String categoria,
         String imagem
 ) {
-    public static  ProdutoResponseDTO toDto(Produto produto) {
+    public static ProdutoResponseDTO toDto(Produto produto) {
         return new ProdutoResponseDTO(
                 produto.getId(),
                 produto.getNome(),
