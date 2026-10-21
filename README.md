@@ -23,7 +23,7 @@ Git, caso queira clonar o repositório.
 O projeto possui Maven Wrapper, então não é necessário instalar o Maven separadamente.
 
 1. Clonar o repositório
-git clone https://github.com/jonatasEdward/loja-compre-bem-api.git
+git clone https://github.com/Ghoscop/loja-compre-bem-spring/tree/master
 
 2. Entrar na pasta do projeto
 cd loja-compre-bem-api
